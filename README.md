@@ -1,11 +1,11 @@
 # grokky
 
-[![GoDoc](https://godoc.org/github.com/crowdsecurity/grokky?status.svg)](https://godoc.org/github.com/crowdsecurity/grokky)
+[![GoDoc](https://godoc.org/github.com/asians-cloud/grokky?status.svg)](https://godoc.org/github.com/asians-cloud/grokky)
 [![WTFPL License](https://img.shields.io/badge/license-wtfpl-blue.svg)](http://www.wtfpl.net/about/)
-[![Build Status](https://travis-ci.org/crowdsecurity/grokky.svg)](https://travis-ci.org/crowdsecurity/grokky)
-[![Coverage Status](https://coveralls.io/repos/crowdsecurity/grokky/badge.svg?branch=master)](https://coveralls.io/r/crowdsecurity/grokky?branch=master)
-[![GoReportCard](https://goreportcard.com/badge/crowdsecurity/grokky)](https://goreportcard.com/report/crowdsecurity/grokky)
-[![Gitter](https://img.shields.io/badge/chat-on_gitter-46bc99.svg?logo=data:image%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTQiIHdpZHRoPSIxNCI%2BPGcgZmlsbD0iI2ZmZiI%2BPHJlY3QgeD0iMCIgeT0iMyIgd2lkdGg9IjEiIGhlaWdodD0iNSIvPjxyZWN0IHg9IjIiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjciLz48cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMSIgaGVpZ2h0PSI3Ii8%2BPHJlY3QgeD0iNiIgeT0iNCIgd2lkdGg9IjEiIGhlaWdodD0iNCIvPjwvZz48L3N2Zz4%3D&logoWidth=10)](https://gitter.im/crowdsecurity/grokky?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![Build Status](https://travis-ci.org/asians-cloud/grokky.svg)](https://travis-ci.org/asians-cloud/grokky)
+[![Coverage Status](https://coveralls.io/repos/asians-cloud/grokky/badge.svg?branch=master)](https://coveralls.io/r/asians-cloud/grokky?branch=master)
+[![GoReportCard](https://goreportcard.com/badge/asians-cloud/grokky)](https://goreportcard.com/report/asians-cloud/grokky)
+[![Gitter](https://img.shields.io/badge/chat-on_gitter-46bc99.svg?logo=data:image%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTQiIHdpZHRoPSIxNCI%2BPGcgZmlsbD0iI2ZmZiI%2BPHJlY3QgeD0iMCIgeT0iMyIgd2lkdGg9IjEiIGhlaWdodD0iNSIvPjxyZWN0IHg9IjIiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjciLz48cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMSIgaGVpZ2h0PSI3Ii8%2BPHJlY3QgeD0iNiIgeT0iNCIgd2lkdGg9IjEiIGhlaWdodD0iNCIvPjwvZz48L3N2Zz4%3D&logoWidth=10)](https://gitter.im/asians-cloud/grokky?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 Package grokky is a pure Golang Grok-like patterns library, which can
 help you to parse log files and other. This is based on
@@ -46,8 +46,8 @@ The difference:
   (closer to tail) group in any cases. But the grok also has
   `ParseToMultiMap` method. To see the difference explanation get the
   package (using `go get -t`) and run the following command
-  `go test -v -run the_difference github.com/crowdsecurity/grokky`. Or check
-  out [source code of the test](https://github.com/crowdsecurity/grokky/blob/master/bench_test.go#L134).
+  `go test -v -run the_difference github.com/asians-cloud/grokky`. Or check
+  out [source code of the test](https://github.com/asians-cloud/grokky/blob/master/bench_test.go#L134).
 
 3. The grokky was designed as a factory of patterns. E.g. compile once and use
   many times.
@@ -55,19 +55,19 @@ The difference:
 # Get it
 
 ```
-go get -u -t github.com/crowdsecurity/grokky
+go get -u -t github.com/asians-cloud/grokky
 ```
 
 Run test case
 
 ```
-go test github.com/crowdsecurity/grokky
+go test github.com/asians-cloud/grokky
 ```
 
 Run benchmark comparsion with vjeantet/grok
 
 ```
-go test -bench=.* github.com/crowdsecurity/grokky
+go test -bench=.* github.com/asians-cloud/grokky
 ```
 
 
@@ -79,7 +79,7 @@ go test -bench=.* github.com/crowdsecurity/grokky
 package main
 
 import (
-	"github.com/crowdsecurity/grokky"
+	"github.com/asians-cloud/grokky"
 	"fmt"
 	"log"
 	"time"
@@ -184,7 +184,7 @@ h.Must("nginx", `%{NS:clientip}\s%{NSS:ident}\s%{NSS:auth}`+
 ## More performance
 
 Since the
-[`grokky.Pattern`](https://godoc.org/github.com/crowdsecurity/grokky#Pattern)
+[`grokky.Pattern`](https://godoc.org/github.com/asians-cloud/grokky#Pattern)
 inherits [`regexp.Regexp`](https://godoc.org/regexp#Regexp), it's possible
 to use methods of the `regexp.Regexp`. E.g. you can to use
 [`FindStringSubmatch`](https://godoc.org/regexp#Regexp.FindStringSubmatch)
@@ -192,7 +192,7 @@ for example instead of `(grokky.Pattern).Parse`. Or any other method of
 the `regexp.Regexp`.
 
 Check out
-[Benchmark_parse_vs_findStringSubmatch](https://github.com/crowdsecurity/grokky/blob/master/bench_test.go#L409)
+[Benchmark_parse_vs_findStringSubmatch](https://github.com/asians-cloud/grokky/blob/master/bench_test.go#L409)
 for example.
 
 For my machine result of this becnhmark is (the map is `Parse`, and the slice is

@@ -1,4 +1,4 @@
-module github.com/crowdsecurity/grokky
+module github.com/asians-cloud/grokky
 
 go 1.20
 
